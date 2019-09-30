@@ -115,7 +115,7 @@
 #elif defined(IMGUI_IMPL_OPENGL_LOADER_GLEW)
 #include <GL/glew.h>    // Needs to be initialized with glewInit() in user's code
 #elif defined(IMGUI_IMPL_OPENGL_LOADER_GLAD)
-#include <glad/glad.h>  // Needs to be initialized with gladLoadGL() in user's code
+#include <glad/gl.h>  // Needs to be initialized with gladLoadGL() in user's code
 #else
 #include IMGUI_IMPL_OPENGL_LOADER_CUSTOM
 #endif
@@ -179,7 +179,7 @@ bool    ImGui_ImplOpenGL3_Init(const char* glsl_version)
     gl_loader = "GLEW";
 #elif defined(IMGUI_IMPL_OPENGL_LOADER_GLAD)
     gl_loader = "GLAD";
-#else IMGUI_IMPL_OPENGL_LOADER_CUSTOM
+#else // IMGUI_IMPL_OPENGL_LOADER_CUSTOM
     gl_loader = "Custom";
 #endif
 
