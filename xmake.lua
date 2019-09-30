@@ -1,0 +1,11 @@
+
+includes("../glfw/xmake.lua")
+target("imgui")
+    set_kind("static")
+    add_defines("IMGUI_IMPL_OPENGL_LOADER_GLAD", {public=true})
+    add_includedirs(".", {public=true})
+    add_includedirs("examples", {public=true})
+    add_deps("glad", "glfw")
+    add_files("*.cpp")
+    add_files("examples/imgui_impl_opengl3.cpp")
+    add_files("examples/imgui_impl_glfw.cpp")
